@@ -1,0 +1,186 @@
+@import 'reset';
+
+body {
+	background-color: #fff;
+	color: #333;
+	font: 300 16px/1.5 "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	margin: 0 auto;
+	padding: 50px 25px;
+	max-width: 720px;
+}
+
+header {
+	position: relative;
+	h1 {
+		font-size: 2em;
+		font-weight: 700;
+		line-height: 1.2;
+		margin: 0 0 0 35px;
+		color: #000;
+		&:before {
+			content: '🚀';
+			display: block;
+			position: absolute;
+			left: -10px;
+		}
+	}
+}
+
+section {
+	position: relative;
+	padding: 0 0 0 35px;
+	margin: 55px 0;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -26px;
+		left: 0;
+		bottom: -26px;
+		width: 10px;
+		background-color: #000;
+		overflow: hidden;
+		border-radius: 2px;
+	}
+
+	$gradient-1: #1a7bff;
+	$gradient-2: #05e5ff;
+	$gradient-3: #c1ff48;
+	$gradient-4: #fff000;
+	$gradient-5: #ff640a;
+	$gradient-6: #f40b32;
+	$gradient-7: #ce0049;
+	$gradient-8: #ee3333;
+	// $gradient-9: #e21d69;
+
+	&:nth-of-type(1):before { @include linear-gradient($gradient-8, $gradient-7) }
+	&:nth-of-type(2):before { @include linear-gradient($gradient-7, $gradient-6) }
+	&:nth-of-type(3):before { @include linear-gradient($gradient-6, $gradient-5) }
+	&:nth-of-type(4):before { @include linear-gradient($gradient-5, $gradient-4) }
+	&:nth-of-type(5):before { @include linear-gradient($gradient-4, $gradient-3) }
+	&:nth-of-type(6):before { @include linear-gradient($gradient-3, $gradient-2) }
+	&:nth-of-type(7):before { @include linear-gradient($gradient-2, $gradient-1) }
+
+	&:first-of-type {
+		&:before {
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			top: -18px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -28px;
+			left: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 5px 10px 5px;
+			border-color: transparent transparent $gradient-7 transparent;
+		}
+	}
+
+	& > h1 {
+		position: absolute;
+		@include transform(rotate(-90deg));
+		bottom: 0;
+		left: -32px;
+		font-weight: 500;
+	}
+}
+
+article {
+	position: relative;
+
+	&:before {
+		content: '';
+		display: none;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 6px 10px 6px;
+		border-color: transparent transparent #000000 transparent;
+		position: absolute;
+		top: -28px;
+		left: -20px;
+	}
+
+	& + article {
+		margin-top: 30px;
+	}
+
+	h1 {
+		font-size: 1.4em;
+		font-weight: 500;
+		line-height: 1.2;
+		color: #000;
+	}
+
+	h2 {
+		font-size: .8em;
+		font-weight: 700;
+		line-height: 1.5;
+		padding: 10px 0 12px;
+		color: #555;
+
+		& > a,
+		& > span {
+			margin-right: 10px;
+			white-space: nowrap;
+		}
+
+		a span {
+			color: #15c;
+		}
+		a:hover span { text-decoration: underline; }
+	}
+
+	.what:before {
+		content: '🏢';
+		margin-right: 5px;
+	}
+
+	.where {
+		font-weight: 500;
+		&:before {
+			content: '📍';
+			margin-right: 5px;
+		}
+	}
+
+	p a {
+		color: #15c;
+		&:hover { text-decoration: underline; }
+		&:visited { color: #795ebb }
+	}
+
+	p + p {
+		margin-top: .5em;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	ul {
+		margin: 1em 0 0 20px;
+		font-weight: 700;
+		list-style: disc outside;
+
+		a {
+			color: #15c;
+			&:hover { text-decoration: underline; }
+			&:visited { color: #795ebb }
+		}
+
+		strong + span {
+			font-weight: 400;
+		}
+	}
+
+	li {
+		margin: .3em 0;
+	}
+}
