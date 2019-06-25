@@ -1,8 +1,3 @@
-html,body,span,h1,p,a,ul,li,aside,footer,header,nav,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article,aside,footer,header,nav,section{display:block;}
-a{color:inherit;text-decoration:none;outline:none;}
-ul{list-style:none;}
-
 html, body {
 	height: 100%;
 }
@@ -11,6 +6,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0;
 }
 
 header {
@@ -27,7 +23,7 @@ h1 {
 
 p {
 	display: flex;
-	font-size: 12px;
+	font-size: .75em;
 	font-weight: 600;
 	line-height: 1.2;
 	margin: 0;
@@ -43,6 +39,9 @@ p {
 .work {
 	margin-left: auto;
 	color: #05c;
+	text-decoration: none;
+
+	&:focus,
 	&:hover {
 		text-decoration: underline;
 	}
