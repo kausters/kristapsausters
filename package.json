@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
+    "start:work": "parcel darbs/index.html",
     "prebuild": "rm -r dist/*",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html | parcel build darbs/index.html"
   },
   "license": "ISC",
   "devDependencies": {
