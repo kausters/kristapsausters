@@ -7,7 +7,9 @@
     "start": "parcel index.html",
     "start:work": "parcel darbs/index.html",
     "prebuild": "rm -r dist/*",
-    "build": "parcel build index.html | parcel build darbs/index.html"
+    "build": "npm run build:main | npm run build:work",
+    "build:main": "parcel build index.html --public-url ./",
+    "build:work": "parcel build darbs/index.html -d dist/darbs --public-url ./"
   },
   "license": "ISC",
   "devDependencies": {
