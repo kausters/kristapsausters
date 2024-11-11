@@ -172,17 +172,29 @@ article {
 		}
 	}
 
-	.what:before {
-		content: '🏢';
-		margin-right: 5px;
-	}
-
+	.when,
 	.where {
 		font-weight: 500;
+	}
+
+	.what,
+	.when,
+	.where {
 		&:before {
-			content: '📍';
 			margin-right: 5px;
 		}
+	}
+
+	.what:before {
+		content: '🏢';
+	}
+
+	.when:before {
+		content: '📆';
+	}
+
+	.where:before {
+		content: '📍';
 	}
 
 	p {
