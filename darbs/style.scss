@@ -140,6 +140,17 @@ article {
 		font-size: 1.4em;
 		font-weight: 500;
 		line-height: 1.2;
+
+		small {
+			display: block;
+			font-size: 1em;
+			font-style: normal;
+			color: #555;
+
+			@media (prefers-color-scheme: dark) {
+				color: lighten(#555, 33%);
+			}
+		}
 	}
 
 	h2 {
