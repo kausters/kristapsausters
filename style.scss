@@ -20,17 +20,17 @@ h1 {
 	font-size: 2em;
 	font-weight: 700;
 	line-height: 1.2;
-	margin: 0;
+	margin: 0 0 0 -1px; // Visual alignment
 }
 
 ul {
 	display: flex;
 	list-style: none;
-	font-size: .72em;
+	font-size: .75em;
 	font-weight: 600;
 	line-height: 1.2;
-	margin-block: 0.5em 0;
-	padding-left: 1px; // Visual balance
+	margin-block: 4px 0;
+	padding: 0;
 	text-transform: uppercase;
 
 	&:has(:empty) li {
@@ -40,7 +40,7 @@ ul {
 	li:not(:empty) + li:before {
 		content: '•';
 		font-weight: 500;
-		padding-inline: .3em;
+		padding-inline: .5em;
 	}
 
 	li {
