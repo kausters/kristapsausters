@@ -2,6 +2,13 @@ html {
 	height: 100%;
 	display: grid;
 	place-items: center;
+	background: #f8f8f8;
+	color: #1a1a1a;
+
+	@media (prefers-color-scheme: dark) {
+		background: #1a1a1a;
+		color: #f8f8f8;
+	}
 }
 
 body {
@@ -23,7 +30,7 @@ ul {
 	font-weight: 600;
 	line-height: 1.2;
 	margin-block: 0.5em 0;
-	padding-left: 1px;
+	padding-left: 1px; // Visual balance
 	text-transform: uppercase;
 	transition: opacity 0.1s ease-out;
 
@@ -41,14 +48,18 @@ ul {
 		font-weight: 500;
 		padding-inline: .3em;
 	}
+}
 
-	a {
-		color: #05c;
-		text-decoration: none;
+a {
+	color: #05c;
+	text-decoration: none;
 
-		&:focus,
-		&:hover {
-			text-decoration: underline;
-		}
+	@media (prefers-color-scheme: dark) {
+		color: #38f;
+	}
+
+	&:focus,
+	&:hover {
+		text-decoration: underline;
 	}
 }
