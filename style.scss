@@ -31,6 +31,11 @@ ul {
 	padding-left: 1px;
 	text-transform: uppercase;
 
+	&:has(li:empty) {
+		// Hide list while it has an empty (loading) item to prevent the items shifting
+		opacity: 0;
+	}
+
 	li:not(:empty) + li:before {
 		content: '•';
 		font-weight: 500;
