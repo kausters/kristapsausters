@@ -60,15 +60,25 @@ ul {
 }
 
 a {
-	color: #05c;
+	--link-color: #05c;
+
+	color: var(--link-color);
 	text-decoration: none;
 
 	@media (prefers-color-scheme: dark) {
-		color: lighten(#05c, 20%);
+		--link-color: #{lighten(#05c, 20%)};
 	}
 
 	&:focus,
 	&:hover {
 		text-decoration: underline;
+	}
+
+	&.secret {
+		color: inherit;
+
+		&:hover {
+			color: var(--link-color);
+		}
 	}
 }
