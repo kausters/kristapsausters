@@ -9,7 +9,7 @@ body {
 	margin: 0;
 }
 
-header {
+main {
 	font: 300 16px/1.5 "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	padding: 20px 20px 60px;
 }
@@ -21,28 +21,29 @@ h1 {
 	margin: 0;
 }
 
-p {
+ul {
 	display: flex;
-	font-size: .75em;
+	list-style: none;
+	font-size: .72em;
 	font-weight: 600;
 	line-height: 1.2;
-	margin: 0;
+	margin-block: 0.5em 0;
 	padding-left: 1px;
 	text-transform: uppercase;
 
-	span {
+	li:not(:empty) + li:before {
+		content: '•';
 		font-weight: 500;
-		padding: 0 .3em;
+		padding-inline: .3em;
 	}
-}
 
-.work {
-	margin-left: auto;
-	color: #05c;
-	text-decoration: none;
+	a {
+		color: #05c;
+		text-decoration: none;
 
-	&:focus,
-	&:hover {
-		text-decoration: underline;
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }

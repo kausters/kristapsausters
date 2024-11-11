@@ -16,7 +16,7 @@ function getAge() {
  * @returns {Element}
  */
 function getTarget() {
-	return document.getElementsByTagName('output')[0];
+	return document.getElementById('age');
 }
 
 getTarget().innerText = getAge();
