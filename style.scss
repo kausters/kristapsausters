@@ -64,7 +64,7 @@ a {
 	text-decoration: none;
 
 	@media (prefers-color-scheme: dark) {
-		color: #38f;
+		color: lighten(#05c, 20%);
 	}
 
 	&:focus,

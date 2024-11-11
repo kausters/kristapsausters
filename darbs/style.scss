@@ -1,10 +1,15 @@
 body {
-	background-color: #fff;
-	color: #333;
+	background: #f8f8f8;
+	color: #1a1a1a;
 	font: 400 16px/1.5 "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	margin: 0 auto;
 	padding: 50px 25px;
 	max-width: 720px;
+
+	@media (prefers-color-scheme: dark) {
+		background: #1a1a1a;
+		color: #f8f8f8;
+	}
 }
 
 header {
@@ -17,7 +22,6 @@ header {
 		font-weight: 700;
 		line-height: 1.2;
 		margin: 0 auto 0 35px;
-		color: #000;
 		&:before {
 			content: '🚀';
 			display: block;
@@ -51,12 +55,11 @@ section {
 		left: 0;
 		bottom: -26px;
 		width: 10px;
-		background-color: #000;
 		overflow: hidden;
 		border-radius: 2px;
 	}
 
-	$gradient-0: #ffffff;
+	$gradient-0: rgba(#1a7bff, 0); // Start from transparent version of the 1st color
 	$gradient-1: #1a7bff;
 	$gradient-2: #05e5ff;
 	$gradient-3: #c1ff48;
@@ -122,19 +125,6 @@ section {
 article {
 	position: relative;
 
-	&:before {
-		content: '';
-		display: none;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 0 6px 10px 6px;
-		border-color: transparent transparent #000000 transparent;
-		position: absolute;
-		top: -28px;
-		left: -20px;
-	}
-
 	& + article {
 		margin-top: 30px;
 	}
@@ -144,7 +134,6 @@ article {
 		font-size: 1.4em;
 		font-weight: 500;
 		line-height: 1.2;
-		color: #000;
 	}
 
 	h2 {
@@ -155,15 +144,16 @@ article {
 		padding: 10px 0 12px;
 		color: #555;
 
+		@media (prefers-color-scheme: dark) {
+			color: lighten(#555, 33%);
+		}
+
 		& > a,
 		& > span {
 			margin-right: 10px;
 			white-space: nowrap;
 		}
 
-		a span {
-			color: #15c;
-		}
 		a:hover span { text-decoration: underline; }
 	}
 
@@ -178,13 +168,6 @@ article {
 			content: '📍';
 			margin-right: 5px;
 		}
-	}
-
-	a {
-		color: #15c;
-		text-decoration: none;
-		&:hover { text-decoration: underline; }
-		&:visited { color: #795ebb }
 	}
 
 	p {
@@ -205,12 +188,6 @@ article {
 		font-weight: 700;
 		list-style: disc outside;
 
-		a {
-			color: #15c;
-			&:hover { text-decoration: underline; }
-			&:visited { color: #795ebb }
-		}
-
 		strong + span {
 			font-weight: 400;
 		}
@@ -218,5 +195,27 @@ article {
 
 	li {
 		margin: .3em 0;
+	}
+}
+
+a {
+	color: #05c;
+	text-decoration: none;
+
+	@media (prefers-color-scheme: dark) {
+		color: lighten(#05c, 20%);
+	}
+
+	&:focus,
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:visited {
+		color: #795ebb;
+
+		@media (prefers-color-scheme: dark) {
+			color: lighten(#795ebb, 20%);
+		}
 	}
 }
