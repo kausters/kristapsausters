@@ -32,21 +32,30 @@ ul {
 	margin-block: 0.5em 0;
 	padding-left: 1px; // Visual balance
 	text-transform: uppercase;
-	transition: opacity 0.1s ease-out;
 
-	&:has(li:empty) {
-		// Hide list while it has an empty (loading) item to prevent the items shifting
-		opacity: 0;
-	}
-
-	li:empty {
-		display: none;
+	&:has(:empty) li {
+		animation-play-state: paused;
 	}
 
 	li:not(:empty) + li:before {
 		content: '•';
 		font-weight: 500;
 		padding-inline: .3em;
+	}
+
+	li {
+		animation: fade-in 0.3s ease-out both;
+		animation-delay: calc(var(--index) * 0.15s);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
 
