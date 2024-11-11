@@ -157,10 +157,8 @@ article {
 		& > a,
 		& > span {
 			margin-right: 10px;
-			white-space: nowrap;
+			display: inline-flex;
 		}
-
-		a:hover span { text-decoration: underline; }
 	}
 
 	.what:before {
@@ -212,9 +210,20 @@ a {
 		color: lighten(#05c, 20%);
 	}
 
+	// For normal links, add underline to the link itself
+	&:not(:has(span)) {
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	// For span-wrapped links, add underline to the inner span
 	&:focus,
 	&:hover {
-		text-decoration: underline;
+		span {
+			text-decoration: underline;
+		}
 	}
 
 	&:visited {
