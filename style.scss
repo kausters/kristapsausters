@@ -45,7 +45,7 @@ ul {
 
 	li {
 		animation: fade-in 0.3s ease-out both;
-		animation-delay: calc(var(--index) * 0.15s);
+		animation-delay: calc(0.4s + var(--index) * 0.15s);
 	}
 }
 
