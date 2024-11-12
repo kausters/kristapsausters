@@ -131,6 +131,27 @@ section {
 		order: 9999;
 		align-self: flex-start;
 	}
+
+	& {
+		// Lock height and offset the spacing in article. We need this to take
+		// up layout height in the sidebar so that the sticky scrolling bounds
+		// are calculated correctly and don't extend past the border line, but
+		// it can't take up any actual height in the section container, other-
+		// wise there'll be a gap after the last article. Kind of nasty tbh.
+		--text-width: 36px;
+
+		&:first-of-type {
+			--text-width: 60px;
+		}
+
+		& > h1 {
+			height: var(--text-width);
+		}
+
+		& > article:last-of-type {
+			margin-bottom: calc(var(--text-width) * -1);
+		}
+	}
 }
 
 article {
