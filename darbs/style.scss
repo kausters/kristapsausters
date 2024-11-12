@@ -112,7 +112,7 @@ section {
 		&:first-of-type:after {
 			// Hide the gradient borders in print because backgrounds aren't
 			// printed by default anyway and this will just create artifacts.
-			display: none;
+			content: normal;
 		}
 	}
 
@@ -120,24 +120,20 @@ section {
 		font-size: inherit;
 		font-weight: 500;
 
-		@media screen {
-			// Rotate the text
-			writing-mode: vertical-lr;
-			transform: rotate(180deg);
-			align-self: flex-start;
+		position: sticky;
+		bottom: 32px;
+		margin: -4px 0 0 -60px;
 
-			position: sticky;
-			bottom: 32px;
-			margin: -4px 0 0 -60px;
+		// For sticky bottom to work
+		order: 9999;
 
-			// For sticky bottom to work
-			order: 9999;
-		}
+		// Rotate the text
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
+		align-self: flex-start;
 
 		@media not screen {
-			border-bottom: 1px solid lighten(#555, 33%);
-			margin: 0 0 1em;
-			break-after: avoid;
+			display: none;
 		}
 	}
 
