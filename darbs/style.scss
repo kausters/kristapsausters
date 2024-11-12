@@ -48,6 +48,8 @@ header {
 }
 
 section {
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	margin-block: 64px;
 	padding-left: 36px;
@@ -104,14 +106,19 @@ section {
 	}
 
 	& > h1 {
-		position: absolute;
-		transform: rotate(-90deg);
-		transform-origin: bottom left;
-		bottom: 0;
-		left: 0;
-		margin: 0;
+		position: sticky;
+		bottom: 16px;
 		font-size: inherit;
 		font-weight: 500;
+
+		// Rotate the text
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
+
+		// For sticky bottom to work
+		order: 9999;
+		align-self: flex-start;
+		margin: 0 0 0 -60px;
 	}
 
 
@@ -124,6 +131,11 @@ section {
 		margin: 0;
 		font-size: inherit;
 		font-weight: 500;
+
+		& + h1 {
+			// Prevent overlap of year with "Present"
+			top: 240px;
+		}
 	}
 }
 
