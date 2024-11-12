@@ -105,6 +105,14 @@ section {
 		}
 	}
 
+	@media not screen {
+		&:before,
+		&:first-of-type:after {
+			// Hide the gradient borders in print because backgrounds aren't printed by default anyway
+			display: none;
+		}
+	}
+
 	& > h1 {
 		position: sticky;
 		bottom: 32px;
