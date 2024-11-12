@@ -73,16 +73,18 @@ section {
 	$gradient-5: #ff640a;
 	$gradient-6: #f40b32;
 	$gradient-7: #ce0049;
-	$gradient-8: #7851a9;
+	$gradient-8: #a32879;
+	$gradient-9: #7851a9;
 
-	&:nth-of-type(1):before { background-image: linear-gradient($gradient-8, $gradient-7) }
-	&:nth-of-type(2):before { background-image: linear-gradient($gradient-7, $gradient-6) }
-	&:nth-of-type(3):before { background-image: linear-gradient($gradient-6, $gradient-5) }
-	&:nth-of-type(4):before { background-image: linear-gradient($gradient-5, $gradient-4) }
-	&:nth-of-type(5):before { background-image: linear-gradient($gradient-4, $gradient-3) }
-	&:nth-of-type(6):before { background-image: linear-gradient($gradient-3, $gradient-2) }
-	&:nth-of-type(7):before { background-image: linear-gradient($gradient-2, $gradient-1) }
-	&:nth-of-type(8):before { background-image: linear-gradient($gradient-1, $gradient-0) }
+	&:nth-of-type(1):before { background-image: linear-gradient($gradient-9, $gradient-8) }
+	&:nth-of-type(2):before { background-image: linear-gradient($gradient-8, $gradient-7) }
+	&:nth-of-type(3):before { background-image: linear-gradient($gradient-7, $gradient-6) }
+	&:nth-of-type(4):before { background-image: linear-gradient($gradient-6, $gradient-5) }
+	&:nth-of-type(5):before { background-image: linear-gradient($gradient-5, $gradient-4) }
+	&:nth-of-type(6):before { background-image: linear-gradient($gradient-4, $gradient-3) }
+	&:nth-of-type(7):before { background-image: linear-gradient($gradient-3, $gradient-2) }
+	&:nth-of-type(8):before { background-image: linear-gradient($gradient-2, $gradient-1) }
+	&:nth-of-type(9):before { background-image: linear-gradient($gradient-1, $gradient-0) }
 
 	&:first-of-type {
 		&:before {
@@ -101,7 +103,7 @@ section {
 			height: 0;
 			border-style: solid;
 			border-width: 0 6px 12px 6px;
-			border-color: transparent transparent $gradient-8 transparent;
+			border-color: transparent transparent $gradient-9 transparent;
 		}
 	}
 
@@ -116,8 +118,10 @@ section {
 	& > h1 {
 		position: sticky;
 		bottom: 32px;
+		margin: -4px 0 0 -60px;
 		font-size: inherit;
 		font-weight: 500;
+		white-space: nowrap;
 
 		// Rotate the text
 		writing-mode: vertical-lr;
@@ -126,24 +130,6 @@ section {
 		// For sticky bottom to work
 		order: 9999;
 		align-self: flex-start;
-		margin: 0 0 0 -60px;
-	}
-
-
-	& > .present {
-		position: absolute;
-		writing-mode: vertical-lr;
-		transform: rotate(180deg);
-		top: 0;
-		left: -24px;
-		margin: 0;
-		font-size: inherit;
-		font-weight: 500;
-
-		& + h1 {
-			// Prevent overlap of year with "Present"
-			top: 240px;
-		}
 	}
 }
 
