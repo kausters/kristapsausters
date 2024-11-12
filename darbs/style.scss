@@ -152,48 +152,42 @@ article {
 		}
 	}
 
-	h2 {
+	.info {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 12px;
+		margin: 12px 0;
+		padding: 0;
 		font-size: 0.75em;
 		font-weight: 700;
-		line-height: 1.5;
-		margin-block: 12px;
 		color: #555;
 
 		@media (prefers-color-scheme: dark) {
 			color: lighten(#555, 33%);
 		}
 
-		& > a,
-		& > span {
-			margin-right: 10px;
-			display: inline-flex;
-		}
-	}
-
-	.when,
-	.where {
-		font-weight: 500;
-	}
-
-	.what,
-	.when,
-	.where {
-		&:before {
+		li:before {
 			margin-right: 4px;
 		}
-	}
 
-	.what:before {
-		content: '🏢';
-	}
+		.when,
+		.where {
+			font-weight: 500;
+		}
 
-	.when:before {
-		content: '📆';
-	}
+		.what:before {
+			content: '🏢';
+		}
 
-	.where:before {
-		content: '📍';
-	}
+		.when:before {
+			content: '📆';
+		}
+
+		.where:before {
+			content: '📍';
+		}
+		}
 
 	p {
 		margin: 0;
@@ -231,20 +225,9 @@ a {
 		color: lighten(#05c, 20%);
 	}
 
-	// For normal links, add underline to the link itself
-	&:not(:has(span)) {
-		&:focus,
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	// For span-wrapped links, add underline to the inner span
 	&:focus,
 	&:hover {
-		span {
-			text-decoration: underline;
-		}
+		text-decoration: underline;
 	}
 
 	&:visited {
