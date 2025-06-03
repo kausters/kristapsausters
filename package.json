@@ -7,7 +7,7 @@
     "start": "parcel index.html",
     "start:work": "parcel darbs/index.html",
     "start:work:en": "parcel darbs/index.en.html",
-    "prebuild": "rm -r dist/*",
+    "prebuild": "rm -rf dist/*",
     "build": "npm run build:main | npm run build:work | npm run build:work:en",
     "build:main": "parcel build index.html --public-url ./",
     "build:work": "parcel build darbs/index.html -d dist/darbs --public-url ./",
